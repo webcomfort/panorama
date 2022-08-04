@@ -1,0 +1,148 @@
+{
+    "default": {
+        "firstScene": "panorama1",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true,
+        "autoRotate": -1,
+        "autoRotateInactivityDelay": 60000,
+        "disableKeyboardCtrl": true,
+        "showControls": false,
+        "strings": {
+            "loadButtonLabel": "Нажмите для<br>загрузки<br>панорамы",
+            "loadingLabel": "Загружаем...",
+            "bylineLabel": "%s",
+            "noPanoramaError": "Не выбрано изображение.",
+            "fileAccessError": "Файл %s недоступен.",
+            "malformedURLError": "Что-то не так с URL панорамы.",
+            "iOS8WebGLError": "Поскольку на iOS 8's сломана реализация WebGL, только прогрессивно-закодированные JPEG будут работать на вашем устройстве (эта панорама использует стандартное кодирование файлов JPEG).",
+            "genericWebGLError": "Ваш браузер не поддерживает стандарт WebGL, поэтому панорама не будет показана.",
+            "textureSizeError": "Эта панорама слишком большая для вашего устройства! Она %spx по ширине, но ваше устройство может отобразить изображение лишь %spx по ширине. Запустите панораму на другом устройстве. (Если вы автор, попробуйте уменьшить изображение.)",
+            "unknownError": "Неизвестная ошибка. Смотрите консоль.",
+            "twoTouchActivate": "Используйте два пальца, чтобы двигать панораму.",
+            "twoTouchXActivate": "Используйте два пальца, чтобы двигать панораму по горизонтали.",
+            "twoTouchYActivate": "Используйте два пальца, чтобы двигать панораму по вертикали.",
+            "ctrlZoomActivate": "Используйте %s + скролл, чтобы увеличить/уменьшить панораму."
+        }
+    },
+    "scenes": {
+        "panorama1": {
+            "title": "Аничков мост",
+            "hfov": 0,
+            "minHfov" : 27,
+            "maxHfov": 33,
+            "pitch": 10,
+            "minPitch": -11,
+            "maxPitch": 11,
+            "yaw": 25,
+            "minYaw": -180,
+            "maxYaw": 180,
+            "type": "equirectangular",
+            "panorama": "/pano/img/pano/1.jpg",
+            "audio": "/pano/audio/ti_1.mp3",
+            "thumb": "/pano/img/pano/1_tn.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Медный всадник",
+                    "sceneId": "panorama2",
+                    "cssClass": "exit-hotspot"
+                },
+                {
+                    "pitch": 1.75,
+                    "yaw": 25,
+                    "type": "info",
+                    "text": "Коняшка",
+                    "cssClass": "point-hotspot",
+                    "clickHandlerArgs" : {
+                        "title": "Коняшка",
+                        "content": "<p>WWII came to the small town of Tai’erzhuang in central China – and it was never the same again. The town was strategically placed, on the north-south transport railway corridor and the ancient Grand Canal, and so was a focus of the Japanese Imperial army as it advanced. Li Jing Shan was only a child when his family fled the fighting. They returned to find their home, and most of the town, in ruins.</p>"
+                    }
+                },
+                {
+                    "pitch": 2.02,
+                    "yaw": -176,
+                    "type": "info",
+                    "text": "Еще коняшка",
+                    "cssClass": "point-hotspot",
+                    "clickHandlerArgs" : {
+                        "title": "Еще коняшка",
+                        "content": "<p>This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means “look at my width or height property” (which was temporarily done by the main-size keyword until deprecated). The content keyword means “size it based on the item’s content” – this keyword isn’t well supported yet, so it’s hard to test and harder to know what its brethren max-content, min-content, and fit-content do.</p>"
+                    }
+                }
+            ]
+        },
+        "panorama2": {
+            "title": "Медный всадник",
+            "hfov": 30,
+            "minHfov" : 30,
+            "maxHfov": 30,
+            "pitch": 0,
+            "minPitch": -10,
+            "maxPitch": 11,
+            "yaw": -10,
+            "minYaw": -60,
+            "maxYaw": 60,
+            "haov": 130,
+            "vaov": 54.15,
+            "vOffset": 0,
+            "type": "equirectangular",
+            "panorama": "/pano/img/pano/2.jpg",
+            "audio": "/pano/audio/ti_2.mp3",
+            "thumb": "/pano/img/pano/2_tn.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Аничков мост",
+                    "sceneId": "panorama1",
+                    "targetYaw": 25,
+                    "targetPitch": 10,
+                    "cssClass": "exit-hotspot"
+                }
+            ]
+        },
+        "panorama0": {
+            "title": "Карта объектов",
+            "hfov": 0,
+            "minHfov" : 70,
+            "maxHfov": 80,
+            "pitch": 0,
+            "minPitch": -37,
+            "maxPitch": 37,
+            "yaw": 0,
+            "minYaw": -37,
+            "maxYaw": 37,
+            "type": "cubemap",
+            "cubeMap": [
+                "/pano/img/pano/map_front_big.jpg",
+                "/pano/img/pano/map_black_big.jpg",
+                "/pano/img/pano/map_black_big.jpg",
+                "/pano/img/pano/map_black_big.jpg",
+                "/pano/img/pano/map_black_big.jpg",
+                "/pano/img/pano/map_black_big.jpg"
+            ],
+            "thumb": "/pano/img/pano/map_tn.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -4,
+                    "yaw": 20,
+                    "type": "scene",
+                    "text": "Аничков мост",
+                    "sceneId": "panorama1",
+                    "cssClass": "exit-hotspot"
+                },
+                {
+                    "pitch": 19,
+                    "yaw": -2,
+                    "type": "scene",
+                    "text": "Медный всадник",
+                    "sceneId": "panorama2",
+                    "cssClass": "exit-hotspot"
+                }
+            ]
+        }
+    }
+}

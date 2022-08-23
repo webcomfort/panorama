@@ -7,10 +7,10 @@ export class Panorama {
     /**
      * Panorama
      */
-    constructor (jsonURL){
+    constructor (element, jsonURL){
         
         this.jsonURL = jsonURL
-        this.$panorama = document.querySelector(".panorama")
+        this.$panorama = document.querySelector(element)
 
         // Controls
         this.$mapButton = document.querySelector('.controls__button_map')
@@ -58,6 +58,9 @@ export class Panorama {
                 let bounds = this.viewer.getHfovBounds()
                 this.minHfov = bounds[0]
                 this.maxHfov = bounds[1]
+
+                this.$panoPlayIcon.classList.add("hidden")
+                this.$panoPauseIcon.classList.remove("hidden")
 
                 this.setMap(this.data.scenes)
                 this.setAudio(this.curScene)

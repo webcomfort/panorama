@@ -1,4 +1,4 @@
 import { Panorama } from './classes/Panorama'
-import "../sass/index.scss";
+import "../sass/index.scss"
 
-new Panorama("/pano/json/panorama.json")
+new Panorama(".panorama", "/pano/json/panorama.json")
